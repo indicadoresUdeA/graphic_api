@@ -4,4 +4,4 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "Hola, mundo esto es un cambio, no se si se haga automatico"
+    return r"Send a POST request to /login with this body: \{\"user\": \"your_user_here\", \"password\": \"your_password_here\"\}"
