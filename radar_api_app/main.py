@@ -6,13 +6,9 @@ from flask import current_app, send_from_directory, abort
 def get_image(filename):
     """Return an image file from the images directory."""
     images_dir = os.path.join(current_app.root_path, 'images')
+    filename = "descarga.png"
     try:
-        return send_from_directory(
-            images_dir,
-            filename,
-            as_attachment=False,
-            cache_timeout=31536000
-        )
+        return send_from_directory(images_dir, filename, as_attachment=False)
     except FileNotFoundError:
         abort(404)
 
