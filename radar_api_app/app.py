@@ -1,10 +1,12 @@
 from flask import Flask, request
+from . import main                
+
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def root():
-    return "Servicio de gráficos.\n POST /service/<module> con JSON."
+    return "Servicio de gráficos division de innovacion.\n Servicio POST /service/<module> con JSON."
 
 @app.route('/service/<module>', methods=['POST'])
 def service(module):
