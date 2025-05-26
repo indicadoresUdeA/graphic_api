@@ -16,5 +16,11 @@ def service(module):
     except ValueError:
         return 'Module not found', 404
 
+
+@app.route('/service/radar/<path:filename>', methods=['GET'])
+def get_radar_image(filename):
+    """Serve radar images stored in the application."""
+    return main.get_image(filename)
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
