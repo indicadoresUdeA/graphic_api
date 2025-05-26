@@ -1,5 +1,4 @@
 from flask import Flask, request
-from . import main
 
 app = Flask(__name__)
 
@@ -11,7 +10,7 @@ def root():
 def service(module):
     data = request.get_json(force=True) or {}
     try:
-        return main.execute(module, data)
+        return main.service(module)
     except ValueError:
         return 'Module not found', 404
 
